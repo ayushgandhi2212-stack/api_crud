@@ -1,0 +1,27 @@
+﻿@model Mvc_client.Models.Fruits_api
+
+@{
+    ViewData["Title"] = "Delete Fruit";
+}
+
+<div class="container mt-5">
+    <div class="card shadow text-center">
+        <div class="card-header bg-danger text-white">
+            <h4>🗑️ Delete Confirmation</h4>
+        </div>
+
+        <div class="card-body">
+            <h5>Are you sure you want to delete this fruit?</h5>
+
+            <p><strong>Name:</strong> @Model.fruit_Name</p>
+            <p><strong>Quantity:</strong> @Model.Quantity</p>
+
+            <form asp-action="DeleteConfirmed" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Mvc_client.Models.Fruits_api
+
+@{
+    ViewData["Title"] = "Fruit Details";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-info text-white text-center">
+            <h4>📄 Fruit Details</h4>
+        </div>
+
+        <div class="card-body text-center">
+
+            <h5><strong>Fruit Name:</strong> @Model.fruit_Name</h5>
+            <h5><strong>Quantity:</strong> @Model.Quantity</h5>
+
+            <div class="mt-3">
+                <a asp-action="Index" class="btn btn-secondary">Back</a>
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+            </div>
+
+        </div>
+    </div>
+</div>
